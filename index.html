@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <script type="text/javascript" src="static/jquery1.12.4.js"></script>
+        <script type="text/javascript" src="static/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=cS4ENf1GqkwwAYhYB21QBF7Y3FEpXPMS&s=1"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="transfer.js"></script>
+        <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    </head>
+    <style type="text/css">
+        body,
+        html,
+        #container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+        .my-label{
+            white-space: pre-wrap;
+            line-height: 8px;
+            background-color: white; /* 文字显示背景颜色，可注释 */
+        }
+    </style>
+    <body>
+        <div id='container'>
+        </div>
+    </body>
+    <script>
+        let showData = gpsShowData;
+        let showType = 'points'; // 'line'、'points'
+        let gpsDataType = 'wgs84_bd09'; // wgs84_gcj02\wgs84_bd09\gcj02_wgs84\gcj02_bd09\bd09_wgs84\bd09_gcj02
+        let map = initMap();
+        draw(map, showData, gpsDataType, showType, )
+        // Alt + H 可显示或隐藏文字说明
+        document.addEventListener("keydown", handleKeyDown);
+    </script>
+</html>
